@@ -11,8 +11,11 @@
 		<img src="/images/logo.png" />
 		<h1 id="title">${title}</h1>
 	</center>
-	
-	<script type="text/javascript" src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+	<form method="POST" enctype="multipart/form-data" action="/file/upload"> 
+       	文件：<input type="file" name="file" />
+       <input type="submit" value="上传" />
+   	</form>
+	<script type="text/javascript" src="/webjars/jquery/2.1.4/jquery.min.js"></script>
 	
 	<script>
 		$(function(){
