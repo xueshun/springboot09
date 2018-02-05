@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.StringUtils;
 
-import com.mysql.jdbc.StringUtils;
 import com.xue.bean.RoncooUser;
 import com.xue.dao.UserDao;
 import com.xue.util.base.JdbcDaoImpl;
@@ -58,7 +58,7 @@ public class UserDaoImpl extends JdbcDaoImpl implements UserDao {
 		
 		// 若要like查询，如下
 		StringBuffer sql = new StringBuffer("select * from roncoo_user where 1=1");
-		if(!StringUtils.isNullOrEmpty(name)){
+		if(!StringUtils.isEmpty(name)){
 			// Sql.checkSql 的作用是防止sql注入
 			sql.append(" and name like '%").append(Sql.checkSql(name)).append("%' ");
 		}
