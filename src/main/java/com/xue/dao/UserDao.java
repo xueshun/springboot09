@@ -1,6 +1,7 @@
 package com.xue.dao;
 
 import com.xue.bean.RoncooUser;
+import com.xue.util.base.Page;
 
 
 public interface UserDao{
@@ -13,5 +14,7 @@ public interface UserDao{
 	int updateById(RoncooUser roncooUser);
 	//查询操作
 	RoncooUser selectById(int id);
+	//分页查询
+	Page<RoncooUser> queryForPage(int pageCurrent, int pageSize, String name);
 }
 

@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.xue.bean.RoncooUser;
 import com.xue.dao.UserDao;
+import com.xue.util.base.Page;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -48,5 +49,10 @@ public class Springboot09ApplicationTests {
 		RoncooUser result = userDao.selectById(2);
 		System.out.println(result);
 	}
-
+	
+	@Test
+	public void pageSelect() {
+		Page<RoncooUser> queryForPage = userDao.queryForPage(1, 20, "测试");
+		System.out.println(queryForPage);
+	}
 }
