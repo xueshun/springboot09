@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.xue.bean.RoncooUser;
+import com.xue.bean.RoncooUserLog;
+import com.xue.dao.RoncooUserLogDao;
 import com.xue.dao.UserDao;
 import com.xue.util.base.Page;
 
@@ -18,6 +20,9 @@ public class Springboot09ApplicationTests {
 
 	@Autowired
 	private UserDao userDao;
+	
+	@Autowired
+	private RoncooUserLogDao userLogDao;
 	
 	@Test
 	public void insert() {
@@ -54,5 +59,14 @@ public class Springboot09ApplicationTests {
 	public void pageSelect() {
 		Page<RoncooUser> queryForPage = userDao.queryForPage(1, 20, "测试");
 		System.out.println(queryForPage);
+	}
+	
+	@Test
+	public void inserLog() {
+		RoncooUserLog log = new RoncooUserLog();
+		log.setCreateTime(new Date());
+		log.setUserIp("127.0.0.1");
+		log.setUserName("wang");
+		userLogDao.save(log);
 	}
 }
