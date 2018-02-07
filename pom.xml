@@ -56,7 +56,7 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<!-- <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> 
 			<scope>runtime</scope> </dependency> -->
 
@@ -72,6 +72,12 @@
 			<artifactId>ehcache</artifactId>
 		</dependency>
 
+		<!-- spring session -->
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session</artifactId>
+		</dependency>
+
 		<!-- Redis -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -83,7 +89,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-activemq</artifactId>
 		</dependency>
-		
+
 		<!-- rest -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
